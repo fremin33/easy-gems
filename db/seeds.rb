@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Article.destroy_all
+Category.destroy_all
+
+Category.new(name: "Authentification").save
+Category.new(name: "Authorisation").save
+Category.new(name: "Formulaire").save
+Category.new(name: "Parseur").save
+Category.new(name: "Uploader").save
+Category.new(name: "Localisation").save
+Category.new(name: "Recherche").save
+Category.new(name: "Social").save
+Category.new(name: "Framework").save
+
+Article.new(title: "blabla", preface: "lalala", category_id: Category.first, description: "lalalalallalal", picture_url: "http://res.cloudinary.com/fremin33/image/upload/v1490017446/zpq4i4y6lx7mgqgobtlr.jpg").save
