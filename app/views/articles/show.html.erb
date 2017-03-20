@@ -4,7 +4,7 @@
   <div class="description">
     <h1><%= @article.title %></h1>
     <h2><%= @article.preface %></h2>
-    <p class="summary"><%= @article.description %></p>
+    <p class="summary"><%= @article.description.html_safe %></p>
   </div>
 </div>
 

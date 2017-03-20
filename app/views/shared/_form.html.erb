@@ -2,7 +2,7 @@
 <%= f.input :title %>
 <%= f.input :preface %>
 <%= f.input :category_id, collection: @categories %>
-<%= f.input :description %>
+<%= f.input :description, as: :text %>
 <%= f.input :picture, as: :attachinary %>
 <%= f.submit %>
 <% end %>
