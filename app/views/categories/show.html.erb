@@ -1,0 +1,51 @@
+<br>
+<div class="container">
+  <div class="row">
+    <% @articles.reverse.each do |article| %>
+      <% if article.id.odd? %>
+        <div class="col-xs-12">
+          <div class="blog-card">
+            <div class="photo"><%= cl_image_tag article.picture.path %></div>
+            <ul class="details">
+              <li class="author"><a href="#">Fremin Florian</a></li>
+              <li class="date"><%= article.created_at %></li>
+              <li class="tags">
+                <ul>
+                  <li><a href="#"><%= article.category.name %></a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="description">
+              <h1><%= article.title %></h1>
+              <h2><%= article.preface %></h2>
+              <p class="summary"><%= article.description[0...197]%>...</p>
+              <%= link_to "Voir plus", article_path(article) %>
+            </div>
+          </div>
+        </div>
+      <% elsif  article.id.even? %>
+        <div class="col-xs-12">
+          <div class="blog-card alt">
+            <div class="photo"><%= cl_image_tag article.picture.path %></div>
+            <ul class="details">
+              <li class="author"><a href="#">Fremin Florian</a></li>
+              <li class="date"><%= article.created_at %></li>
+              <li class="tags">
+                <ul>
+                  <li><a href="#"><%= article.category.name %></a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="description">
+              <h1><%= article.title %></h1>
+              <h2><%= article.preface %></h2>
+              <p class="summary"><%= article.description[0...178]%> ...</p>
+              <%= link_to "Voir plus", article_path(article) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<br>
