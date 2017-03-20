@@ -1,1 +1,36 @@
-// Your footer style
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+.content {
+  padding: 30px;
+  font: 300 40px Lato, sans-serif;
+  text-align: center;
+  color: white;
+  background: #CC0000;
+}
+
+.footer {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.social {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  margin: 0 10px;
+  line-height: 70px;
+  font-family: Entypo;
+  font-size: 35px;
+  text-align: center;
+  color: white;
+  border-radius: 50%;
+  background: #CC0000;
+  overflow: hidden;
+  transition: color .3s;
+}
+
+.social:hover {
+  color: #59d;
+  cursor: pointer;
+}
+
