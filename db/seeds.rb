@@ -11,4 +11,4 @@ Category.new(name: "Recherche").save
 Category.new(name: "Social").save
 Category.new(name: "Framework").save
 
-Article.new(title: "blabla", preface: "lalala", category_id: Category.first, description: "lalalalallalal", picture_url: "http://res.cloudinary.com/fremin33/image/upload/v1490017446/zpq4i4y6lx7mgqgobtlr.jpg").save
+Article.new(title: "blabla", preface: "lalala", category: Category.all.sample, description: "lalalalallalal", picture_url: "http://res.cloudinary.com/fremin33/image/upload/v1490017446/zpq4i4y6lx7mgqgobtlr.jpg").save
