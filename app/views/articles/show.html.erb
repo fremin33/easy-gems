@@ -1,10 +1,13 @@
-<div class="blog-card-show">
-  <div class="photo"><%= cl_image_tag @article.picture.path %></div>
-  <br>
-  <div class="description">
-    <h1><%= @article.title %></h1>
-    <h2><%= @article.preface %></h2>
-    <p class="summary"><%= @article.description.html_safe %></p>
+<br>
+<div class="container">
+  <div class="blog-card-show">
+    <div class="photo"><%= cl_image_tag @article.picture.path %></div>
+    <br>
+    <div class="description">
+      <h1><%= @article.title %></h1>
+      <h2><%= @article.preface %></h2>
+      <p class="summary"><%= @article.description.html_safe %></p>
+    </div>
   </div>
 </div>
 
