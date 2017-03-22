@@ -1,13 +1,13 @@
 <header>
   <div class="center-block text-center">
     <h3>
-    <%= link_to " Rails made in France", root_path, class: "fa fa-diamond fa-2x" %>
+    <%= link_to " Easy Gems", root_path, class: "fa fa-diamond fa-2x" %>
     </h3>
   </div>
 </header>
 
 <nav class="navbar navbar-default mega-nav">
-  <div class="container">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#MainMenu" aria-expanded="false">
       <span class="sr-only">Toggle navigation</span>
@@ -21,14 +21,17 @@
         <li><%= link_to "Accueil", root_path %></li>
         <li><%= link_to "Categories", categories_path %></li>
       </ul>
-      <form id="mega-search" class="navbar-form navbar-right">
-        <div class="input-group">
-          <%= form_tag articles_path, :method => 'Get' do %>
-        <%= text_field_tag :search, params[:search] %>
-        <%= submit_tag "Search", class: "fa fa-search"%>
-        <% end %>
+      <form class="form-inline">
+        <div class="navbar-right">
+          <div class="form-group" style="padding-top: 8px">
+            <%= form_tag articles_path, :method => 'Get' do %>
+              <%= text_field_tag :search, params[:search], data: { autocomplete: autocomplete_article_title_articles_path }, class: "form-control", placeholder: "Rechercher une Gem" %>
+          </div>
+              <%= submit_tag "Search", class: "btn btn-danger" %>
+            <% end %>
         </div>
       </form>
     </div>
   </div>
 </nav>
+

@@ -1,20 +1,24 @@
 .center-block {
-  background-color: #CC0000;
+  background-color: white;
   h3 {
     margin: 0;
     color: white;
     a {
       text-decoration: none;
-      color: white;
-      font-size: 25px;
+      color: #CC0000;
+      font-size: 45px;
     }
   }
 }
 
+.navbar-form {
+  margin-top: 11px;
+}
 .mega-nav {
     background-color:#CC0000;
     margin: 0;
     border: 0;
+    padding: 0;
 }
 .mega-nav.navbar-default .navbar-nav > li > a {
     color: white;
@@ -22,4 +26,28 @@
       background-color: rgba(240,0,0,0.5);
     }
 }
+
+.btn {
+  margin-top: 8px;
+}
+
+.ui-menu {
+  padding-left: 0px;
+  width: 25%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+}
+  .ui-menu-item {
+    color: black;
+    list-style-type: none;
+    padding-left: 0px;
+    width: 75%;
+    &:hover {
+      color: #CC0000;
+      font-size: 15px;
+    }
+  }
+
 
