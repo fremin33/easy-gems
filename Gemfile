@@ -21,6 +21,8 @@ gem "jquery-fileupload-rails"
 gem 'coffee-rails'
 gem 'pg_search'
 gem 'bootsy'
+gem 'rails4-autocomplete'
+gem "jquery-ui-rails"
 
 group :development, :test do
   gem 'binding_of_caller'

@@ -1,9 +1,9 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :search_article, only: [:index]
+  autocomplete :article, :title, :full => true
 
   def index
-
   end
 
   def show
