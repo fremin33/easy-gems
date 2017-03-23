@@ -1,3 +1,4 @@
+
 <br>
 <div class="container">
   <div class="blog-card-show">
@@ -11,3 +12,7 @@
   </div>
 </div>
 
+<% if policy(@article).edit? %>
+  <td><%= link_to 'Edit', edit_article_path(@article) %></td>
+  <td><%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>

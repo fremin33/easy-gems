@@ -20,6 +20,9 @@
       <ul class="nav navbar-nav menu-list">
         <li><%= link_to "Accueil", root_path %></li>
         <li><%= link_to "Categories", categories_path %></li>
+        <% if user_signed_in? %>
+        <li><%= link_to "Créer un article", new_article_path %></li>
+        <% end %>
       </ul>
       <form class="form-inline">
         <div class="navbar-right">
