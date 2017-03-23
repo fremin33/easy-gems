@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :search_article, only: [:index]
   autocomplete :article, :title, :full => true
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
   end

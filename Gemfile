@@ -22,6 +22,7 @@ gem 'coffee-rails'
 gem 'bootsy'
 gem 'rails4-autocomplete'
 gem "jquery-ui-rails"
+gem 'devise'
 
 group :development, :test do
   gem 'binding_of_caller'
