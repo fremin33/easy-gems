@@ -23,6 +23,7 @@ gem 'bootsy'
 gem 'rails4-autocomplete'
 gem "jquery-ui-rails"
 gem 'devise'
+gem 'pundit'
 
 group :development, :test do
   gem 'binding_of_caller'
