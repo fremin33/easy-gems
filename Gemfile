@@ -25,6 +25,7 @@ gem "jquery-ui-rails"
 gem 'devise'
 gem 'pundit'
 gem 'will_paginate'
+gem 'pg_search'
 
 group :development, :test do
   gem 'binding_of_caller'
