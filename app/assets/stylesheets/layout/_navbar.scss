@@ -31,23 +31,56 @@
   margin-top: 8px;
 }
 
-.ui-menu {
-  padding-left: 0px;
-  width: 25%;
+.ui-autocomplete {
+  width: 100px;
   position: absolute;
-  top: 0px;
-  left: 0px;
-  margin: 0px;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  display: none;
+  padding: 4px 0;
+  margin: 0 0 0 0;
+  list-style: none;
+  background-color: #ffffff;
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  color: white;
+  background-color: #CC0000;
 }
-  .ui-menu-item {
-    color: black;
-    list-style-type: none;
-    padding-left: 0px;
-    width: 75%;
-    &:hover {
-      color: #CC0000;
-      font-size: 15px;
-    }
+
+.ui-helper-hidden-accessible {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  color: white;
+}
+
+
+.ui-autocomplete-input {
+  background-color: #CC0000;
+  color: white;
+
+}
+
+// barre de recherche
+.form-control {
+  background-color: #CC0000;
+  &:hover {
+          background-color: rgba(240,0,0,0.5);
   }
-
-
+}

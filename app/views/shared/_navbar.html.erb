@@ -20,11 +20,17 @@
       <ul class="nav navbar-nav menu-list">
         <li><%= link_to "Accueil", root_path %></li>
         <li><%= link_to "Categories", categories_path %></li>
-        <% if !user_signed_in? %>
-          <li><%= link_to "Se connecter", new_user_session_path %></li>
-        <% else %>
-          <li><%= link_to "Créer un article", new_article_path %></li>
+        <% if user_signed_in? %>
           <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
+          <li><%= link_to "Créer un article", new_article_path %></li>
+          <% if controller_name == "articles" && action_name == "show"  %>
+            <% if policy(@article).edit? %>
+            <li><%= link_to 'Edit', edit_article_path(@article) %></li>
+            <li><%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            <% end %>
+          <% end %>
+        <% else %>
+          <li><%= link_to "Se connecter", new_user_session_path %></li>
         <% end %>
       </ul>
       <form class="form-inline">
