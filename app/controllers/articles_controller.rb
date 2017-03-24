@@ -58,9 +58,9 @@ class ArticlesController < ApplicationController
 
   def search_article
     if params[:search].blank?
-      @articles = Article.paginate(:page => params[:page], :per_page => 5)
+      @articles = Article.all.paginate(:page => params[:page], :per_page => 5)
     else
-      @articles = Article.search_by_title(params[:search]).paginate(:page => params[:page], :per_page => 5)
+      @articles = Article.all.search_by_title(params[:search]).paginate(:page => params[:page], :per_page => 5)
     end
   end
 end
