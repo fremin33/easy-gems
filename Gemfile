@@ -32,6 +32,7 @@ gem 'pundit'
 gem 'will_paginate'
 gem 'pg_search'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'gaffe'
 
 group :development, :test do
   gem 'binding_of_caller'
