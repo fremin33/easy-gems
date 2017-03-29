@@ -1,2 +1,5 @@
-skip_before_filter :authenticate_user!
+Gaffe.configure do |config|
+  config.errors_controller = 'ErrorsController'
+end
+
 Gaffe.enable!
