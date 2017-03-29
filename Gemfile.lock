@@ -124,6 +124,8 @@ GEM
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
+    gaffe (1.2.0)
+      rails (>= 4.0.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     has_scope (0.7.0)
@@ -302,6 +304,7 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-sass
+  gaffe
   jbuilder (~> 2.0)
   jquery-fileupload-rails
   jquery-rails
