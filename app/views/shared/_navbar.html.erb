@@ -1,49 +1,44 @@
-<header>
-  <div class="center-block text-center">
-    <h3>
-    <%= link_to " Easy Gems", root_path, class: "fa fa-diamond fa-2x" %>
-    </h3>
-  </div>
-</header>
-
-<nav class="navbar navbar-default mega-nav">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#MainMenu" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       </button>
+      <%= link_to "Easy Gems", root_path, class: 'navbar-brand' %>
     </div>
-    <div class="collapse navbar-collapse" id="MainMenu">
-      <ul class="nav navbar-nav menu-list">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
         <li><%= link_to "Accueil", root_path %></li>
         <li><%= link_to "Categories", categories_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form action="" class="search-form">
+            <div class="form-group">
+              <%= form_tag articles_path, :method => 'Get' do %>
+              <%= text_field_tag :search, params[:search], data: { autocomplete: autocomplete_article_title_articles_path }, class: "form-control", placeholder: "Rechercher une Gem" %>
+              <span class="glyphicon glyphicon-search form-control-feedback" type="submit"  value="Submit"></span>
+            </div>
+          </form>
+        </li>
         <% if user_signed_in? %>
-          <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
-          <li><%= link_to "Créer un article", new_article_path %></li>
           <% if controller_name == "articles" && action_name == "show"  %>
             <% if policy(@article).edit? %>
-            <li><%= link_to 'Edit', edit_article_path(@article) %></li>
-            <li><%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+              <li><%= link_to 'Edit', edit_article_path(@article) %></li>
+              <li><%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %></li>
             <% end %>
           <% end %>
-        <% else %>
-          <li><%= link_to "Se connecter", new_user_session_path %></li>
+            <li><%= link_to "Créer un article", new_article_path %></li>
+            <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <li><%= link_to "S'inscrire" , new_user_registration_path %></li>
+            <li><%= link_to "Se connecter", new_user_session_path %></li>
+          <% end %>
         <% end %>
       </ul>
-      <form class="form-inline">
-        <div class="navbar-right">
-          <div class="form-group" style="padding-top: 8px">
-            <%= form_tag articles_path, :method => 'Get' do %>
-              <%= text_field_tag :search, params[:search], data: { autocomplete: autocomplete_article_title_articles_path }, class: "form-control", placeholder: "Rechercher une Gem" %>
-          </div>
-              <%= submit_tag "Search", class: "btn btn-danger" %>
-            <% end %>
-        </div>
-      </form>
     </div>
   </div>
 </nav>
-
