@@ -1,7 +1,3 @@
-body {
-  background-color: #777;
-}
-
 .navbar-default .navbar-nav > li > a {
   font-size: 0.7em;
   font-family: "Raleway", Helvetica, sans-serif;
@@ -26,16 +22,12 @@ body {
   border-right: solid 1px rgba(160, 160, 160, 0.3);
 }
 
-@media(max-width:768px){
-  .navbar-brand {
-    border-right: none;
-  }
-}
-
-
 .search-form .form-group {
   float: right;
-  transition: all 0.35s, border-radius 0s;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   width: 32px;
   &:hover {
   width: 165%;
@@ -78,3 +70,20 @@ body {
 }
 
 
+@media(max-width:925px){
+  .navbar-brand {
+    border-right: none;
+  }
+
+  .search-form {
+    display: none;
+  }
+
+  .navbar-default .navbar-nav {
+    margin: 0px;
+
+    li:first-child > a {
+    border-left: solid 1px rgba(160, 160, 160, 0.3);
+    }
+  }
+}
