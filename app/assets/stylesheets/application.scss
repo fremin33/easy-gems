@@ -16,10 +16,6 @@
 @import "pages/index";
 @import "articles/*";
 
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #272822; color: #ddd;
+body {
+    background-color: #F4F4F4;
 }
-

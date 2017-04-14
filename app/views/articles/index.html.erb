@@ -1,162 +1,68 @@
-<section id="blog-section" >
-  <div class="container">
+<div class="wrapper">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-8">
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-12 side-bar">
+            <img class="logo" src="https://html5up.net/uploads/demos/future-imperfect/images/logo.jpg" alt="" />
+            <h2>Easy Gems
+            </h2>
+            <p>Installer facilement et rapidement les Gems pour vos projets Ruby on Rails</p>
+            <div class="section"></div>
+          </div>
+          <% @articles.each do |article| %>
+            <%= link_to article_path(article) do %>
+              <div class="col-md-12">
+                <div class="card-side">
+                  <%= cl_image_tag article.picture.path %>
+                  <div class="title">
+                    <h3><%= article.title %></h3>
+                    <p class="time"><%= article.created_at %></p>
+                    <%= image_tag 'avatar.jpg' %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+          <% @articles.each do |article| %>
+            <%= link_to article_path(article) do %>
+              <div class="col-md-12">
+                <div class="posts">
+                  <h3><%= article.title %></h3>
+                  <p class="time"><%= article.created_at %></p>
+                  <%= cl_image_tag article.picture.path %>
+                </div>
+                <div class="section-2"></div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-8">
         <div class="row">
           <% @articles.each do |article| %>
-<%= link_to article_path(article) do %>
-          <div class="col-lg-6 col-md-6">
-            <aside>
-              <%= cl_image_tag article.picture.path %>
-              <div class="content-title">
-                <div class="text-center">
-                  <h3><%= link_to article.title[0..17], article_path(article) %></h3>
+            <div class="col-md-12 article">
+              <div class="row">
+                <div class="col-md-8 left-content">
+                  <h2><%= article.title %></h2>
+                  <p><%= article.preface %></p>
+                </div>
+                <div class="col-md-4 right-content">
+                  <h2> <%= article.created_at %></h2>
+                  <span class="name">Fremin Florian</span>
+                  <%= image_tag 'avatar.jpg' %>
+                </div>
+                <div class="col-md-12 img-article">
+                  <%= cl_image_tag article.picture.path %>
+                  <br><br />
+                  <p><%= article.description[0..110] %></p>
+                  <%= link_to 'Continuer', article_path(article), class: "btn btn-primary" %>
                 </div>
               </div>
-              <div class="content-footer">
-                <img class="user-small-img" src="https://lh3.googleusercontent.com/-uwagl9sPHag/WM7WQa00ynI/AAAAAAAADtA/hio87ZnTpakcchDXNrKc_wlkHEcpH6vMwCJoC/w140-h148-p-rw/profile-pic.jpg">
-                <span style="font-size: 16px;color: #fff;">Fremin Florian</span>
-                <span class="pull-right">
-                  <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
-                  <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
-                </span>
-              </div>
-            </aside>
-          </div>
+            </div>
           <% end %>
-          <% end %>
-        </div>
-      </div>
-      <!--           // RECENT POST===========-->
-      <div class="col-lg-4">
-        <div class="widget-sidebar">
-          <h2 class="title-widget-sidebar">// RECENT POST</h2>
-          <div class="content-widget-sidebar">
-            <ul>
-              <% @articles.last(4).each do |article| %>
-              <li class="recent-post">
-                <%= link_to article_path(article) do %>
-                <div class="post-img">
-                  <%= cl_image_tag article.picture.path, class: "img-responsive" %>
-                </div>
-                <h5><%= article.title %></h5>
-                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
-                <% end %>
-              </li>
-              <hr>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-        <div class="widget-sidebar">
-          <h2 class="title-widget-sidebar">// ARCHIVES</h2>
-          <div class="last-post">
-            <button class="accordion">21/4/2016</button>
-            <div class="panel">
-              <li class="recent-post">
-                <div class="post-img">
-                  <img src="https://lh3.googleusercontent.com/-13DR8P0-AN4/WM1ZIz1lRNI/AAAAAAAADeo/XMfJ7CM-pQg9qfRuCgSnphzqhaj3SQg6QCJoC/w424-h318-n-rw/thumbnail4.jpg" class="img-responsive">
-                </div>
-                <a href="#"><h5>Excepteur sint occaecat cupi non proident laborum.</h5></a>
-                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
-              </li>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-          </div>
-          <hr>
-          <div class="last-post">
-            <button class="accordion">5/7/2016</button>
-            <div class="panel">
-              <li class="recent-post">
-                <div class="post-img">
-                  <img src="https://lh3.googleusercontent.com/-QlnwuVgbxus/WM1ZI1FKQiI/AAAAAAAADeo/nGSd1ExnnfIfIBF27xs8-EdBdfglqFPZgCJoC/w424-h318-n-rw/thumbnail2.jpg" class="img-responsive">
-                </div>
-                <a href="#"><h5>Excepteur sint occaecat cupi non proident laborum.</h5></a>
-                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
-              </li>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-          </div>
-          <hr>
-          <div class="last-post">
-            <button class="accordion">15/9/2016</button>
-            <div class="panel">
-              <li class="recent-post">
-                <div class="post-img">
-                  <img src="https://lh3.googleusercontent.com/-wRHL_FOH1AU/WM1ZIxQZ3DI/AAAAAAAADeo/lwJr8xndbW4MHI-lOB7CQ-14FJB5f5SWACJoC/w424-h318-n-rw/thumbnail5.jpg" class="img-responsive">
-                </div>
-                <a href="#"><h5>Excepteur sint occaecat cupi non proident laborum.</h5></a>
-                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
-              </li>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-          </div>
-          <hr>
-          <div class="last-post">
-            <button class="accordion">2/3/2017</button>
-            <div class="panel">
-              <li class="recent-post">
-                <div class="post-img">
-                  <img src="https://lh3.googleusercontent.com/-QlnwuVgbxus/WM1ZI1FKQiI/AAAAAAAADeo/nGSd1ExnnfIfIBF27xs8-EdBdfglqFPZgCJoC/w424-h318-n-rw/thumbnail2.jpg" class="img-responsive">
-                </div>
-                <a href="#"><h5>Excepteur sint occaecat cupi non proident laborum.</h5></a>
-                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2014</small></p>
-              </li>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-          </div>
-        </div>
-        <!--=====================
-        CATEGORIES
-        ======================-->
-        <div class="widget-sidebar">
-          <h2 class="title-widget-sidebar">// CATEGORIES</h2>
-          <button class="categories-btn">Audio</button>
-          <button class="categories-btn">Blog</button>
-          <button class="categories-btn">Gallery</button>
-          <button class="categories-btn">Images</button>
-        </div>
-        <!--=====================
-        NEWSLATTER
-        ======================-->
-        <div class="widget-sidebar">
-          <h2 class="title-widget-sidebar">// NEWSLATTER</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut .</p>
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-            <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-          </div>
-          <button type="button" class="btn btn-warning">Warning</button>
         </div>
       </div>
     </div>
   </div>
-</section>
-<script src="js/jquery-3.1.1.js"></script>
-<script src="js/bootstrap.js"></script>
-<script>
-$(document).ready(function(){
-$('[data-toggle="tooltip"]').tooltip();
-});
-var acc = document.getElementsByClassName("accordion");
-var i;
-for (i = 0; i < acc.length; i++) {
-acc[i].onclick = function() {
-this.classList.toggle("active");
-var panel = this.nextElementSibling;
-if (panel.style.maxHeight){
-panel.style.maxHeight = null;
-} else {
-panel.style.maxHeight = panel.scrollHeight + "px";
-}
-}
-}
-</script>
-
-
-<div class="apple_pagination">
-    <div class="page_info">
-      <%= page_entries_info @articles %>
-    </div>
-    <%= will_paginate @articles, :container => false %>
-  </div>
+</div>
