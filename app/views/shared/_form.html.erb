@@ -3,7 +3,7 @@
 <%= f.input :preface %>
 <%= f.input :introduction %>
 <%= f.input :category_id, collection: @categories %>
-<%= f.bootsy_area :description, class: 'form-control', rows: 20 %>
+<%= f.bootsy_area :description, class: 'form-control' %>
 <%= f.input :picture, as: :attachinary %>
 <%= f.submit %>
 <% end %>
