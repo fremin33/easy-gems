@@ -7,7 +7,6 @@
       <div class="col-md-4">
         <div class="row">
           <div class="col-md-12 side-bar">
-            <%= image_tag 'avatar.jpg', class: 'logo' %>
             <h2>Easy Gems
             </h2>
             <p>Installer facilement et rapidement les Gems pour vos projets Ruby on Rails</p>
@@ -21,7 +20,6 @@
                   <div class="title">
                     <h3><%= article.title %></h3>
                     <p class="time"><%= article.created_at %></p>
-                    <%= image_tag 'avatar.jpg' %>
                   </div>
                 </div>
               </div>
@@ -52,8 +50,6 @@
                 </div>
                 <div class="col-md-4 right-content">
                   <h2> <%= article.created_at %></h2>
-                  <span class="name">Fremin Florian</span>
-                  <%= image_tag 'avatar.jpg' %>
                 </div>
                 <div class="col-md-12 img-article">
                   <%= cl_image_tag article.picture.path %>
